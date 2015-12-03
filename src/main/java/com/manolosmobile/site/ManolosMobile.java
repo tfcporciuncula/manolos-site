@@ -1,9 +1,12 @@
 package com.manolosmobile.site;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
+import static spark.Spark.port;
+import static spark.Spark.staticFileLocation;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,7 +17,16 @@ public class ManolosMobile {
 		setPortFromEnvVariable();
 		staticFileLocation("/static");
 		
-		get("/", (req, res) -> "hi");
+		String message = "";
+		URL url = ManolosMobile.class.getResource("/static/index.html");
+		if (url == null) {
+			message += "url is null ";
+		} else {
+			message += "url:" + url.toString();
+		}
+		
+		final String finalMessage = message;
+		get("/", (req, res) -> finalMessage);
 	}
 
 	private static void setPortFromEnvVariable() {
