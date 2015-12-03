@@ -5,28 +5,20 @@ import static spark.Spark.port;
 import static spark.Spark.staticFileLocation;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.InputStream;
+
+import spark.utils.IOUtils;
 
 public class ManolosMobile {
 
+	private static String indexHtmlContent;
+	
 	public static void main(String[] args) {
 		setPortFromEnvVariable();
 		staticFileLocation("/static");
+		initIndexHtmlContent("/static/index.html");
 		
-		String message = "";
-		URL url = ManolosMobile.class.getResource("/static/index.html");
-		if (url == null) {
-			message += "url is null ";
-		} else {
-			message += "url:" + url.toString();
-		}
-		
-		final String finalMessage = message;
-		get("/", (req, res) -> finalMessage);
+		get("/", (req, res) -> indexHtmlContent);
 	}
 
 	private static void setPortFromEnvVariable() {
@@ -34,16 +26,16 @@ public class ManolosMobile {
         if (port != null && !port.trim().isEmpty()) {
             port(Integer.parseInt(port));
         } else {
-            port(8080);
+            port(8090);
         }
     }
 	
-	private static String renderHtmlContent(String htmlFile) {
-		try {
-			return new String(Files.readAllBytes(Paths.get(ManolosMobile.class.getResource(htmlFile).toURI())), StandardCharsets.UTF_8);
-		} catch (IOException | URISyntaxException e) {
+	private static void initIndexHtmlContent(String htmlFile) {
+        try (InputStream htmlStream = ManolosMobile.class.getResourceAsStream(htmlFile)) {
+			indexHtmlContent = IOUtils.toString(htmlStream);
+		} catch (IOException e) {
 			e.printStackTrace();
-			return "Error :(";
+			indexHtmlContent = "Error :(";
 		}
 	}
 	
