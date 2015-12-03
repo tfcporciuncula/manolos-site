@@ -6,7 +6,7 @@
 	<version>1.0</version>
 
 	<name>Manolos Website (http://manolosmobile.com)</name>
-	<description>Manolos Website as a Spark Framework application, ready for Heroku deployment</description>
+	<description>Manolos website as a Spark Framework application, ready for Heroku deployment</description>
 	<url>https://github.com/tfcporciuncula/manolos-site</url>
 
 	<licenses>
