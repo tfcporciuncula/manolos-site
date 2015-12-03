@@ -14,7 +14,7 @@ public class ManolosMobile {
 		setPortFromEnvVariable();
 		staticFileLocation("/static");
 		
-		get("/", (req, res) -> renderHtmlContent("/static/index.html"));
+		get("/", (req, res) -> "hi");
 	}
 
 	private static void setPortFromEnvVariable() {
