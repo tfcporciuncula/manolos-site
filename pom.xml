@@ -44,7 +44,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.main.class>com.manolosmobile.site.Main</project.main.class>
+		<project.main.class>com.manolosmobile.site.ManolosMobile</project.main.class>
 
 		<spark.version>2.3</spark.version>
 
