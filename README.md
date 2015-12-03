@@ -2,4 +2,6 @@
 
 ... a startup called Manolos ruled the world. This is their website.
 
-> http://manolosmobile.com
+http://manolosmobile.com
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
