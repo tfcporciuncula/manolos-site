@@ -7,7 +7,7 @@
 
 	<name>Manolos Website (http://manolosmobile.com)</name>
 	<description>Manolos Website as a Spark Framework application, ready for Heroku deployment</description>
-	<url></url>
+	<url>https://github.com/tfcporciuncula/manolos-site</url>
 
 	<licenses>
 		<license>
@@ -36,9 +36,9 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git@github.com:pdsoftplan/zap-java-api.git</connection>
-		<developerConnection>scm:git:git@github.com:pdsoftplan/zap-java-api.git</developerConnection>
-		<url>git@github.com:pdsoftplan/zap-java-api.git</url>
+		<connection>scm:git:git@github.com:tfcporciuncula/manolos-site.git</connection>
+		<developerConnection>scm:git:git@github.com:tfcporciuncula/manolos-site.git</developerConnection>
+		<url>git@github.com:tfcporciuncula/manolos-site.git</url>
 	</scm>
 
 	<properties>
