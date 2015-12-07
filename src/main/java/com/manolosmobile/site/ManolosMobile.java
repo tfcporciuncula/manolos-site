@@ -11,17 +11,17 @@ import spark.utils.IOUtils;
 
 public class ManolosMobile {
 
-	private static String indexHtmlContent;
+    private static String indexHtmlContent;
 	
-	public static void main(String[] args) {
-		setPortFromEnvVariable();
-		staticFileLocation("/static");
-		initIndexHtmlContent("/static/index.html");
-		
-		get("/", (req, res) -> indexHtmlContent);
-	}
+    public static void main(String[] args) {
+        setPortFromEnvVariable();
+        staticFileLocation("/static");
+        initIndexHtmlContent("/static/index.html");
+        
+        get("/", (req, res) -> indexHtmlContent);
+    }
 
-	private static void setPortFromEnvVariable() {
+    private static void setPortFromEnvVariable() {
         String port = System.getenv("PORT");
         if (port != null && !port.trim().isEmpty()) {
             port(Integer.parseInt(port));
@@ -29,14 +29,14 @@ public class ManolosMobile {
             port(8090);
         }
     }
-	
-	private static void initIndexHtmlContent(String htmlFile) {
+    
+    private static void initIndexHtmlContent(String htmlFile) {
         try (InputStream htmlStream = ManolosMobile.class.getResourceAsStream(htmlFile)) {
-			indexHtmlContent = IOUtils.toString(htmlStream);
-		} catch (IOException e) {
-			e.printStackTrace();
-			indexHtmlContent = "Error :(";
-		}
-	}
-	
+            indexHtmlContent = IOUtils.toString(htmlStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+            indexHtmlContent = "Error :(";
+        }
+    }
+    
 }
