@@ -46,11 +46,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.main.class>com.manolosmobile.site.ManolosMobile</project.main.class>
 
-		<spark.version>2.3</spark.version>
+		<spark.version>2.7.2</spark.version>
 
-		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-		<maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
-		<heroku-maven-plugin.version>0.5.7</heroku-maven-plugin.version>
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<heroku-maven-plugin.version>2.0.6</heroku-maven-plugin.version>
 	</properties>
 
 	<dependencies>
